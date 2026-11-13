@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sidenote: ask questions about your PDFs and notes</title>
+  <meta name="description" content="Upload a PDF or your notes and ask questions in plain language. Every answer links to the exact line it came from.">
+  <meta name="theme-color" content="#2338C9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Crect width='22' height='22' rx='5' fill='%232338C9'/%3E%3Crect x='5' y='6' width='12' height='2' rx='1' fill='%23fff'/%3E%3Crect x='5' y='12' width='12' height='4' rx='1' fill='%23FFE14D'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script>try{var t=localStorage.getItem("sidenote_theme");if(t==="light")t="paper";if(t==="dark")t="night";if(/^(paper|night|sepia|forest|ocean|rose|contrast)$/.test(t))document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body data-view="landing">
+
+<!-- ================= Landing ================= -->
+<div class="landing" id="landing">
+  <header class="nav">
+    <a class="brand" href="/" aria-label="Sidenote home">
+      <svg class="logo" width="24" height="24" viewBox="0 0 22 22" aria-hidden="true"><rect class="l-bg" width="22" height="22" rx="5"/><rect class="l-line" x="5" y="6" width="12" height="2" rx="1"/><rect class="l-mark" x="5" y="12" width="12" height="4" rx="1"/></svg>
+      <span class="brand-name">Sidenote</span>
+    </a>
+    <nav class="nav-links" aria-label="Page sections">
+      <a href="#how">How it works</a>
+      <a href="#trust">Privacy</a>
+      <button type="button" class="btn ghost small theme-btn">Theme</button>
+    </nav>
+  </header>
+
+  <section class="hero-wrap">
+    <div class="hero-copy">
+      <h1>Ask your documents. See where every answer came from.</h1>
+      <p class="lede">Upload a PDF or your notes and ask in plain language. Sidenote answers from your pages only, and each answer links to the exact line it found.</p>
+
+      <div class="bigdrop" id="landDrop">
+        <svg class="doc-ico" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><path d="M9 3h11l7 7v19a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 3v7h7M12 18h11M12 23h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="bd-title">Drop a PDF or notes here</p>
+        <button type="button" class="btn big" id="landPick">Choose files</button>
+        <p class="bd-hint">PDF, TXT or Markdown, up to <span data-maxmb>10</span> MB each.</p>
+      </div>
+      <p class="fine">No sign-up needed. Files stay in your session and are deleted after <span data-ttl>2</span> hours.</p>
+    </div>
+
+    <figure class="specimen" aria-label="Example: an answer next to the page it came from">
+      <div class="sheet-page">
+        <p class="sp-title">Biology notes <span>page 1</span></p>
+        <div class="spage">Plants make glucose from sunlight, water and carbon dioxide. <mark class="sweep">This whole process takes place inside the chloroplasts.</mark> Chlorophyll absorbs the light and passes the energy on. The oxygen we breathe is a by-product.</div>
+      </div>
+      <div class="sp-card">
+        <p class="sq">Where does photosynthesis happen?</p>
+        <p class="sa">Inside the chloroplasts <span class="cite static">1</span></p>
+      </div>
+    </figure>
+  </section>
+
+  <section class="band" id="how">
+    <div class="band-in">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><span class="num">1</span><h3>Upload your files</h3><p>Add up to <span data-maxfiles>5</span> PDFs or notes. Sidenote reads the text and splits it into passages.</p></li>
+        <li><span class="num">2</span><h3>Ask a question</h3><p>Type it the way you would ask a person. English, Hindi and Hinglish all work.</p></li>
+        <li><span class="num">3</span><h3>Check the source</h3><p>Select a numbered citation to open the page, with the matching sentence highlighted.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="lang">
+    <div class="band-in lang-in">
+      <div>
+        <h2>Ask in the language you think in</h2>
+        <p class="lang-sub">Your documents can be in English and your question in Hindi or Hinglish. The answer comes back in the language you asked in, with the same citations.</p>
+      </div>
+      <div class="lang-ex" lang="hi">
+        <p class="sq">पौधे भोजन कैसे बनाते हैं?</p>
+        <p class="sa">पौधे सूर्य के प्रकाश, पानी और कार्बन डाइऑक्साइड से ग्लूकोज़ बनाते हैं <span class="cite static">1</span></p>
+        <p class="sq alt" lang="en-IN">Photosynthesis kahan hota hai?</p>
+        <p class="sa alt" lang="en-IN">Ye chloroplasts ke andar hota hai <span class="cite static">1</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="facts" id="trust">
+    <div class="band-in">
+      <h2>Built so you can check the work</h2>
+      <div class="fact-grid">
+        <div><h3>Only your files</h3><p>Answers come from your documents. If the answer is not in them, Sidenote says so instead of guessing.</p></div>
+        <div><h3>Private by default</h3><p>Files live in memory for your session and are deleted after <span data-ttl>2</span> hours. There are no accounts.</p></div>
+        <div><h3>Citations on every answer</h3><p>Each statement points to numbered passages, so you can verify it in seconds.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span class="brand-name">Sidenote</span>
+    <p>Answers are written by an AI model and can be wrong. Use the citations to verify important details.</p>
+    <nav class="legal-links" aria-label="Legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+  </footer>
+</div>
+
+<!-- ================= Workspace ================= -->
+<div class="app" id="app" hidden>
+  <aside class="rail" id="rail" aria-label="Your files">
+    <a class="brand" href="/" aria-label="Sidenote home">
+      <svg class="logo" width="24" height="24" viewBox="0 0 22 22" aria-hidden="true"><rect class="l-bg" width="22" height="22" rx="5"/><rect class="l-line" x="5" y="6" width="12" height="2" rx="1"/><rect class="l-mark" x="5" y="12" width="12" height="4" rx="1"/></svg>
+      <span class="brand-name">Sidenote</span>
+    </a>
+
+    <div class="drop" id="drop">
+      <p class="drop-title">Add files</p>
+      <p class="drop-hint">Drop them here, or</p>
+      <button type="button" class="btn" id="pick">Choose files</button>
+    </div>
+
+    <h2 class="rail-h" id="filesHead" hidden>Your files</h2>
+    <ul class="files" id="files"></ul>
+
+    <div class="rail-foot">
+      <div class="usage">
+        <p class="left" id="left"></p>
+        <div class="meter" id="meter" role="progressbar" aria-label="Questions used" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0"><span id="meterBar"></span></div>
+      </div>
+      <button type="button" class="btn ghost small" id="newChat" hidden>New chat</button>
+      <p class="privacy">Files are deleted after <span data-ttl>2</span> hours. Answers can be wrong, so check the sources.</p>
+      <div class="legal-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div>
+      <button type="button" class="link theme-btn">Theme</button>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <main class="main">
+    <header class="topbar">
+      <button type="button" class="btn ghost small" id="toggleRail" aria-controls="rail" aria-expanded="false">Files</button>
+      <span class="brand-name">Sidenote</span>
+      <span class="topbar-left" id="topLeft"></span>
+    </header>
+
+    <div class="scroll" id="scroll"><div class="column" id="column"></div></div>
+
+    <form class="composer" id="composer">
+      <div class="composer-in">
+        <label for="q" class="sr">Your question</label>
+        <textarea id="q" rows="1" maxlength="1000" placeholder="Ask about your documents" disabled></textarea>
+        <button type="submit" class="btn" id="send" disabled>Ask</button>
+      </div>
+      <p class="hint">Press Enter to send and Shift+Enter for a new line.</p>
+    </form>
+  </main>
+
+  <aside class="panel" id="panel" aria-label="Sources" hidden>
+    <header class="panel-head">
+      <h2>Sources</h2>
+      <div class="panel-nav" id="panelNav" hidden>
+        <button type="button" class="btn ghost small" id="srcPrev" aria-label="Previous source">Prev</button>
+        <span id="srcPos" aria-live="polite"></span>
+        <button type="button" class="btn ghost small" id="srcNext" aria-label="Next source">Next</button>
+      </div>
+      <button type="button" class="btn ghost small" id="closePanel">Close</button>
+    </header>
+    <div class="panel-body" id="panelBody"></div>
+  </aside>
+</div>
+
+<input type="file" id="file" accept=".pdf,.txt,.md" multiple hidden>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+<script src="/theme.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

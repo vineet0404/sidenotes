@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sidenote: Business &amp; Build Plan</title>
+<style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { font-size: 10.3pt; }
+  body { margin: 0; font-family: "Inter", "DejaVu Sans", sans-serif; line-height: 1.55; color: #1c1c1e; }
+  h1, h2, h3 { font-family: "Bitstream Charter", "Charter", "DejaVu Serif", serif; font-weight: 400; color: #151517; }
+  h1 { font-size: 27pt; line-height: 1.12; margin: 6mm 0 5mm; letter-spacing: -.01em; }
+  h2 { font-size: 18pt; line-height: 1.2; margin: 11mm 0 3.5mm; break-after: avoid; }
+  h3 { font-family: "Inter", "DejaVu Sans", sans-serif; font-size: 10.5pt; font-weight: 700; margin: 5mm 0 2mm; break-after: avoid; }
+  p { margin: 0 0 3mm; }
+  ul, ol { margin: 0 0 3.5mm; padding-left: 6mm; }
+  li { margin-bottom: 1.3mm; }
+  li::marker { color: #444; }
+  b, strong { font-weight: 700; }
+  .pills { display: flex; gap: 2.5mm; align-items: center; margin-bottom: 4mm; font-size: 8.5pt; color: #444; }
+  .pill { background: #efeeea; border-radius: 3mm; padding: .6mm 2.6mm; }
+  .note { color: #555; }
+  table { width: 100%; border-collapse: collapse; margin: 1mm 0 4mm; font-size: 9.2pt; }
+  tr { break-inside: avoid; }
+  th { text-align: left; background: #f6f4ef; font-weight: 500; color: #444; }
+  th, td { border: 1px solid #e3e0d8; padding: 2.2mm 3mm; vertical-align: top; }
+  td.yes { white-space: nowrap; }
+  .fig { margin: 3mm 0 1.5mm; break-inside: avoid; }
+  .panel { background: #f6f6f5; border-radius: 2.5mm; padding: 4mm 4mm 2mm; }
+  .panel svg { width: 100%; height: auto; display: block; }
+  .cap { color: #666; font-size: 8.5pt; margin: 1.5mm 0 4mm; }
+  .keep { break-inside: avoid; }
+  .pb { break-before: page; }
+</style>
+</head>
+<body>
+
+<h1>Sidenote: Business &amp; Build Plan</h1>
+<div class="pills"><span class="pill">Nov 13, 2026</span><span>·</span><span class="pill">@vineet</span></div>
+
+<h2 style="margin-top:6mm">Overview</h2>
+<p>Sidenote is a website where you upload a PDF or your notes and ask questions in plain language. The AI answers only from your pages, and every answer links to the exact line it came from, so you can check it in one click. There is nothing to install, and visitors can try it before signing up.</p>
+<ul>
+  <li><b>Product:</b> a document Q&amp;A website with numbered citations and a highlighted source page</li>
+  <li><b>For:</b> students first, then researchers and working professionals</li>
+  <li><b>Revenue model:</b> free plan (limited questions) + paid plans from ₹149/month (estimate)</li>
+  <li><b>Why it can work:</b> our bet is that people do not trust a chatbot answer without proof, and that few tools show the exact source line while also handling Hindi and Hinglish well. We still have to confirm this with real users.</li>
+</ul>
+<p class="note">All numbers in this document are estimates. After the first 20-30 users, replace them with real measurements.</p>
+
+<h2>Problem and target customers</h2>
+<p>People already paste documents into chatbots, but they cannot tell whether the answer is real or invented. Finding the right page by hand in a 200-page PDF takes too long. Sidenote gives the answer and the page together.</p>
+<table>
+  <tr><th style="width:27%">Customer type</th><th style="width:38%">Their problem</th><th>What they need</th></tr>
+  <tr><td>Students (college, exam prep)</td><td>Long textbooks and notes; hard to find where something is written; cannot trust an answer without the page</td><td>Ask a question, get the answer and the exact page, in Hindi or English</td></tr>
+  <tr><td>Researchers and project students</td><td>Many papers; need specific facts and where each one appeared</td><td>Questions across several files, with citations</td></tr>
+  <tr><td>Working professionals</td><td>Long contracts, reports and manuals; little time to read</td><td>Quick answers with proof of where they came from</td></tr>
+</table>
+<p><b>Who to sell to first:</b> students. They are easy to reach (college groups, Instagram, study communities), they feel the pain before every exam, and they accept ₹99-149/month if it clearly saves time. Professionals and businesses come later and can pay more.</p>
+<p><b>Market size:</b> I do not have a reliable number. Talk to 50 students first and see how many would pay; only then estimate the market.</p>
+
+<h2>User flow</h2>
+<p>The user only needs a browser. The full flow:</p>
+<ol>
+  <li>The visitor opens the site and drops in a PDF or notes. No sign-up is needed for the first try.</li>
+  <li>Sidenote reads the file and splits it into passages. This takes a few seconds.</li>
+  <li>The user asks a question in English, Hindi or Hinglish (for example "photosynthesis kahan hoti hai?").</li>
+  <li>The answer streams in with numbered citations, such as [1] and [2].</li>
+  <li>The user clicks a citation. A source page opens with the matching sentence highlighted.</li>
+  <li>When the free limit is reached, the user signs in with Google and picks a plan. Payment goes through Razorpay.</li>
+  <li>Later visits show the saved library and past chats, so the user can continue where they stopped.</li>
+</ol>
+<p>If the answer is not in the documents, Sidenote says so instead of guessing. A clear "not found" is better than a confident wrong answer.</p>
+
+<h2>Features</h2>
+<p>Keep the first version small. One thing must work well: upload, ask, get an answer with proof.</p>
+<table>
+  <tr><th style="width:52%">Feature</th><th style="width:20%">MVP (first 30 days)</th><th>Later</th></tr>
+  <tr><td>Upload PDF, TXT, Markdown</td><td class="yes">Yes</td><td>Yes</td></tr>
+  <tr><td>Answers with numbered citations</td><td class="yes">Yes</td><td>Yes</td></tr>
+  <tr><td>Source panel with highlighted sentence</td><td class="yes">Yes</td><td>Real PDF page view with highlight</td></tr>
+  <tr><td>English, Hindi and Hinglish questions</td><td class="yes">Basic</td><td>Full (multilingual search)</td></tr>
+  <tr><td>Google sign-in and saved library</td><td class="yes">No</td><td>Yes (days 31-60)</td></tr>
+  <tr><td>Scanned PDFs (OCR)</td><td class="yes">No</td><td>Yes (paid plan)</td></tr>
+  <tr><td>Notebook: save highlights with your notes</td><td class="yes">No</td><td>Yes</td></tr>
+  <tr><td>Study tools: flashcards and quizzes</td><td class="yes">No</td><td>Yes</td></tr>
+  <tr><td>Word, PowerPoint, Excel, web links</td><td class="yes">No</td><td>Yes</td></tr>
+  <tr><td>Export chat to PDF or Word, share link</td><td class="yes">No</td><td>Yes (paid plan)</td></tr>
+</table>
+<p>Keep only the first four rows in the MVP. Add the rest when users ask for them. The full feature list is in FEATURES.md.</p>
+
+<h2>Tech stack and architecture</h2>
+<div class="fig panel">
+<svg viewBox="0 0 700 316" xmlns="http://www.w3.org/2000/svg" font-family="Inter, DejaVu Sans, sans-serif">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a8a8a"/></marker></defs>
+  <text x="4" y="16" font-size="14" font-weight="700" fill="#222">Everything goes through one server</text>
+
+  <rect x="252" y="108" width="442" height="106" rx="8" fill="none" stroke="#b9b9b9" stroke-dasharray="5 4"/>
+  <text x="686" y="207" font-size="10" fill="#777" text-anchor="end">Docker on one small VPS</text>
+
+  <rect x="8" y="124" width="170" height="68" rx="6" fill="#fff" stroke="#c9c9c9"/>
+  <text x="93" y="148" font-size="12" font-weight="700" text-anchor="middle" fill="#222">User (browser)</text>
+  <text x="93" y="165" font-size="10.5" text-anchor="middle" fill="#666">Uploads files,</text>
+  <text x="93" y="179" font-size="10.5" text-anchor="middle" fill="#666">asks questions</text>
+
+  <rect x="272" y="124" width="196" height="68" rx="6" fill="#eaf1fb" stroke="#2f6fd0" stroke-width="1.6"/>
+  <text x="370" y="148" font-size="12" font-weight="700" text-anchor="middle" fill="#222">Sidenote server (FastAPI)</text>
+  <text x="370" y="165" font-size="10.5" text-anchor="middle" fill="#555">Reads files, searches,</text>
+  <text x="370" y="179" font-size="10.5" text-anchor="middle" fill="#555">builds and streams answers</text>
+
+  <rect x="524" y="124" width="162" height="68" rx="6" fill="#fff" stroke="#c9c9c9"/>
+  <text x="605" y="148" font-size="12" font-weight="700" text-anchor="middle" fill="#222">PostgreSQL + storage</text>
+  <text x="605" y="165" font-size="10.5" text-anchor="middle" fill="#666">Users, files, passages,</text>
+  <text x="605" y="179" font-size="10.5" text-anchor="middle" fill="#666">chats, notes</text>
+
+  <rect x="272" y="28" width="196" height="54" rx="6" fill="#fff" stroke="#c9c9c9"/>
+  <text x="370" y="51" font-size="12" font-weight="700" text-anchor="middle" fill="#222">Razorpay</text>
+  <text x="370" y="68" font-size="10.5" text-anchor="middle" fill="#666">Subscriptions and webhooks</text>
+
+  <rect x="272" y="244" width="196" height="58" rx="6" fill="#fff" stroke="#c9c9c9"/>
+  <text x="370" y="267" font-size="12" font-weight="700" text-anchor="middle" fill="#222">AI model</text>
+  <text x="370" y="284" font-size="10.5" text-anchor="middle" fill="#666">Hosted API now, own GPU later</text>
+
+  <line x1="178" y1="142" x2="270" y2="142" stroke="#8a8a8a" marker-end="url(#a)"/>
+  <line x1="270" y1="174" x2="178" y2="174" stroke="#8a8a8a" marker-end="url(#a)"/>
+  <text x="224" y="135" font-size="9.5" fill="#666" text-anchor="middle">files + questions</text>
+  <text x="224" y="190" font-size="9.5" fill="#666" text-anchor="middle">streamed answer</text>
+
+  <line x1="468" y1="158" x2="522" y2="158" stroke="#8a8a8a" marker-end="url(#a)" marker-start="url(#a)"/>
+  <text x="495" y="150" font-size="9.5" fill="#666" text-anchor="middle">save</text>
+  <text x="495" y="178" font-size="9.5" fill="#666" text-anchor="middle">search</text>
+
+  <line x1="370" y1="82" x2="370" y2="122" stroke="#8a8a8a" marker-end="url(#a)"/>
+  <text x="380" y="101" font-size="9.5" fill="#666">payment webhook</text>
+
+  <line x1="346" y1="192" x2="346" y2="242" stroke="#8a8a8a" marker-end="url(#a)"/>
+  <line x1="394" y1="242" x2="394" y2="192" stroke="#8a8a8a" marker-end="url(#a)"/>
+  <text x="338" y="232" font-size="9.5" fill="#666" text-anchor="end">question + passages</text>
+  <text x="402" y="232" font-size="9.5" fill="#666">answer text</text>
+</svg>
+</div>
+<p class="cap">architecture · 5 components</p>
+<p>The browser sends files and questions to the Sidenote server. The server saves the text as searchable passages, finds the best ones for each question, and sends only those passages to the AI model. The model's answer streams back with citations. Razorpay tells the server when a payment succeeds, so plans change automatically.</p>
+
+<h3>Tech choices</h3>
+<ul>
+  <li><b>Backend:</b> Python + FastAPI (already built and working)</li>
+  <li><b>Front end:</b> plain HTML, CSS and JavaScript (already built); move to a framework only when it gets hard to maintain</li>
+  <li><b>AI model:</b> start with a hosted model API, a small and cheap model first, from a provider that does not train on API data. Move to your own GPU (vLLM + a 7B model) only when volume justifies it (see costs). The code already supports both.</li>
+  <li><b>Search:</b> keyword search now; multilingual embeddings (for example bge-m3) with pgvector in days 31-60</li>
+  <li><b>Database:</b> PostgreSQL. Supabase is an option if you want database, login and storage in one place and less setup time.</li>
+  <li><b>Deploy:</b> Docker, one small VPS, Caddy for HTTPS, GitHub Actions for tests and deploys</li>
+  <li><b>Payment:</b> Razorpay subscriptions (Stripe later for customers outside India)</li>
+</ul>
+
+<h2>Costs and pricing</h2>
+<p>The fixed cost at the start is small. The main variable cost is the AI model, which grows with every question. All numbers below are estimates; check each provider's current price page and measure your own cost per question in the first 30 days.</p>
+
+<h3>Monthly running cost (estimate)</h3>
+<table>
+  <tr><th style="width:50%">Item</th><th>Cost</th></tr>
+  <tr><td>Server (VPS) + database</td><td>₹1,500-3,000</td></tr>
+  <tr><td>AI model API (answers)</td><td>About ₹0.1-1.5 per question, depending on the model. Measure it.</td></tr>
+  <tr><td>Embeddings and OCR (from day 31)</td><td>Small per file; measure in beta</td></tr>
+  <tr><td>File storage</td><td>₹100-300 at the start</td></tr>
+  <tr><td>Email, error tracking, analytics</td><td>₹0 on free tiers at the start</td></tr>
+  <tr><td>Domain</td><td>Around ₹800-1,200/year</td></tr>
+  <tr><td>Payment gateway (Razorpay)</td><td>About 2% + GST per payment; check the current rate card</td></tr>
+  <tr><td>Own GPU, if you self-host (always on)</td><td>About ₹18,000-50,000/month (assumes $0.3-0.8 per hour, about ₹85 per dollar)</td></tr>
+</table>
+
+<h3>Pricing plan (placeholder; test with real users)</h3>
+<table>
+  <tr><th style="width:14%">Plan</th><th style="width:16%">Price</th><th>What you get</th></tr>
+  <tr><td>Free</td><td>₹0</td><td>20 questions/month, 3 files, 7-day library, citations and source view</td></tr>
+  <tr><td>Plus</td><td>₹149/month</td><td>300 questions/month, 20 files, 30-day library, OCR for scanned PDFs, saved chats</td></tr>
+  <tr><td>Pro</td><td>₹349/month</td><td>Plus, with 1,000 questions, 100 files, a stronger model, notebook, study tools, export and share links</td></tr>
+</table>
+
+<div class="keep">
+<p><b>Break-even, worked example.</b> Assume fixed cost of ₹3,000/month and a hosted model at ₹0.5 per question. A Plus user asks about 100 questions a month, so AI costs ₹50, and the payment fee is about ₹3. That leaves about ₹96 per user, and ₹3,000 / ₹96 means roughly <b>32 paying users</b> cover the fixed cost. At 500 paying Plus users: revenue ₹74,500, variable cost ₹26,500, fixed ₹3,000, so about ₹45,000/month before tax. If your measured cost per question comes out above about ₹1, change the model or tighten the limits before you start charging.</p>
+<p><b>Free users cost money too.</b> At 20 questions and ₹0.5 each, a fully active free user costs at most ₹10 a month. 1,000 active free users could cost up to ₹10,000, so keep the free limit small.</p>
+</div>
+
+<h3>Hosted API or your own GPU?</h3>
+<table>
+  <tr><th>Option</th><th>Fixed per month</th><th>Variable per Plus user</th><th>Break-even (Plus, ₹149)</th></tr>
+  <tr><td>Hosted model API</td><td>About ₹3,000</td><td>About ₹53</td><td>About 32 users</td></tr>
+  <tr><td>Own GPU, always on</td><td>About ₹21,000-53,000</td><td>About ₹3</td><td>About 145-365 users</td></tr>
+</table>
+<p>The GPU saves about ₹50 per user per month but adds ₹18,000-50,000 of fixed cost, so it only pays for itself at roughly 360-1,000 paying users. Start with the hosted API. Move to your own GPU when volume is there, or earlier if a customer needs documents to stay on your own servers. One GPU also serves only a limited number of simultaneous users.</p>
+
+<h2>Privacy, legal and trust</h2>
+<p>Documents can be private: notes, contracts, reports. People only stay if they trust you, so set these rules from day one:</p>
+<ul>
+  <li><b>Consent:</b> say clearly before upload what is stored, for how long and why, with a link to the privacy policy.</li>
+  <li><b>Keep as little as possible:</b> today files live only in memory and are deleted after 2 hours. When you add saved libraries, let users choose how long to keep files.</li>
+  <li><b>Delete option:</b> a "delete my account and all files" button that removes the database rows, the stored files and the search data.</li>
+  <li><b>Never sell data:</b> do not share or sell user documents; say so in the policy.</li>
+  <li><b>AI provider policy:</b> confirm in writing that the API does not train on your data and check its retention rules.</li>
+  <li><b>No document text in logs</b> or analytics events.</li>
+  <li><b>Honest disclaimer:</b> "Answers are written by an AI and can be wrong. Check the sources. This is not legal, medical or financial advice."</li>
+  <li><b>Sensitive files:</b> warn users not to upload IDs, bank or medical records unless you have the controls to protect them.</li>
+</ul>
+<p>In India, the Digital Personal Data Protection Act, 2023 applies to personal data. Before you start charging, have a lawyer check the privacy policy and the consent wording, and ask a chartered accountant about GST and invoicing.</p>
+
+<h2>90-day build and launch plan</h2>
+<div class="fig panel">
+<svg viewBox="0 0 700 214" xmlns="http://www.w3.org/2000/svg" font-family="Inter, DejaVu Sans, sans-serif">
+  <text x="4" y="16" font-size="14" font-weight="700" fill="#222">Move to the next phase only when the gate passes</text>
+
+  <rect x="8" y="30" width="208" height="112" rx="6" fill="#fff" stroke="#c9c9c9"/>
+  <text x="22" y="53" font-size="12" font-weight="700" fill="#222">Days 1-30</text>
+  <text x="22" y="69" font-size="10.5" fill="#777">Beta online</text>
+  <text x="22" y="92" font-size="10.5" fill="#333">Tests and deploy to a VPS</text>
+  <text x="22" y="109" font-size="10.5" fill="#333">Hosted AI model, HTTPS</text>
+  <text x="22" y="126" font-size="10.5" fill="#333">Invite 20-30 users</text>
+
+  <rect x="246" y="30" width="208" height="112" rx="6" fill="#fff" stroke="#c9c9c9"/>
+  <text x="260" y="53" font-size="12" font-weight="700" fill="#222">Days 31-60</text>
+  <text x="260" y="69" font-size="10.5" fill="#777">Make it stick</text>
+  <text x="260" y="92" font-size="10.5" fill="#333">Google sign-in, saved library</text>
+  <text x="260" y="109" font-size="10.5" fill="#333">Multilingual search</text>
+  <text x="260" y="126" font-size="10.5" fill="#333">Test set of 40 questions</text>
+
+  <rect x="484" y="30" width="208" height="112" rx="6" fill="#fff" stroke="#c9c9c9"/>
+  <text x="498" y="53" font-size="12" font-weight="700" fill="#222">Days 61-90</text>
+  <text x="498" y="69" font-size="10.5" fill="#777">Charge and launch</text>
+  <text x="498" y="92" font-size="10.5" fill="#333">Razorpay plans, usage limits</text>
+  <text x="498" y="109" font-size="10.5" fill="#333">Pricing and legal pages</text>
+  <text x="498" y="126" font-size="10.5" fill="#333">Launch, first 3 payers</text>
+
+  <path d="M231 74 l10 12 l-10 12 l-10 -12z" fill="#eaf1fb" stroke="#2f6fd0" stroke-width="1.6"/>
+  <path d="M469 74 l10 12 l-10 12 l-10 -12z" fill="#eaf1fb" stroke="#2f6fd0" stroke-width="1.6"/>
+  <text x="231" y="166" font-size="10.5" font-weight="700" fill="#222" text-anchor="middle">Gate 1: 20 people use it</text>
+  <text x="231" y="182" font-size="10" fill="#666" text-anchor="middle">10 of them ask 3+ questions</text>
+  <text x="469" y="166" font-size="10.5" font-weight="700" fill="#222" text-anchor="middle">Gate 2: 30 signed-in users</text>
+  <text x="469" y="182" font-size="10" fill="#666" text-anchor="middle">10 come back after a week</text>
+</svg>
+</div>
+<p class="cap">90-day roadmap · 3 phases, 2 gates</p>
+<p>The plan assumes 8-10 hours a week: 1 hour on each weeknight, 3 hours on Saturday and 2 on Sunday. That is about 40 hours per phase. In exam weeks, keep only the Sunday slot. If a gate is not passed, spend 2 more weeks in the same phase; do not add new features.</p>
+
+<h3>Phase 1: days 1-30, beta online (about 40 hours)</h3>
+<ul>
+  <li>Put the code in git, add tests for upload and search, and set up CI (8 h)</li>
+  <li>Deploy to a VPS with HTTPS, connect a hosted AI model, add error tracking and analytics (12 h)</li>
+  <li>Add thumbs up/down, a feedback form and a short privacy and terms page (6 h)</li>
+  <li>Invite 20-30 users, talk to 10 of them (10 h)</li>
+  <li>Measure the real cost per question with 20 real PDFs (4 h)</li>
+</ul>
+<p><b>Gate 1:</b> 20 people used it, 10 of them asked at least 3 questions, you know your cost per question, and at least 5 people say they would pay.</p>
+
+<h3>Phase 2: days 31-60, make it stick (about 40 hours)</h3>
+<ul>
+  <li>Google sign-in and a PostgreSQL database (16 h)</li>
+  <li>Saved library and chat history (12 h)</li>
+  <li>Multilingual embedding search so Hindi and Hinglish questions find English text (8 h)</li>
+  <li>A test set of 40 questions to measure answer quality (4 h)</li>
+</ul>
+<p><b>Gate 2:</b> 30 signed-in users and 10 of them still use it a week later. The "not found" answer works on the unanswerable test questions.</p>
+
+<h3>Phase 3: days 61-90, charge and launch (about 40 hours)</h3>
+<ul>
+  <li>Razorpay subscription and usage limits (16 h)</li>
+  <li>Pricing page and reviewed legal pages (6 h)</li>
+  <li>Demo document and first-run onboarding (4 h)</li>
+  <li>Launch posts and short demo videos (10 h)</li>
+  <li>Buffer for fixes (4 h)</li>
+</ul>
+<p><b>Day 90 check:</b> 100 free users, 3 real paying users, and the margin per paying user is positive.</p>
+<p>The PDF page viewer, notebook, study tools and more file types come after day 90. The detailed engineering steps are in DEVELOPMENT_PLAN.md.</p>
+
+<h2>Marketing and first 100 users</h2>
+<p>The first 100 users will come from talking to people directly, not from paid ads. Start ads only after 20-30 users clearly like the product.</p>
+<ol>
+  <li><b>Weeks 1-2:</b> give the site to 10-15 friends and classmates and ask for feedback every few days.</li>
+  <li><b>Weeks 3-4:</b> share it once in college and exam-prep groups, with a short demo video (not spam).</li>
+  <li><b>Month 2:</b> short videos on Instagram, YouTube Shorts and LinkedIn: "Ask your textbook a question and see the exact page", using real screen recordings.</li>
+  <li><b>Referral:</b> when a friend joins, both get 10 extra questions.</li>
+  <li><b>Build in public:</b> one LinkedIn post a week: what you built, how many users, what you learned.</li>
+  <li><b>Later:</b> landing pages for use cases (study notes, research papers, contracts) so search engines can find you.</li>
+</ol>
+<p><b>Target (estimate):</b> 100 free users, about 5-10% of them paying. If conversion is far lower, change the pricing or the features, not the marketing.</p>
+
+<h2>Risks and next steps</h2>
+<table>
+  <tr><th style="width:36%">Risk</th><th>What to do</th></tr>
+  <tr><td>The AI gives a wrong answer</td><td>Always show citations, say "not found" when unsure, keep a test set, and show a "can be wrong" notice</td></tr>
+  <tr><td>AI cost grows faster than revenue</td><td>Small free limit, cheap model first, per-user caps, measure cost per question every week</td></tr>
+  <tr><td>Own GPU costs too much too early</td><td>Use a hosted API first and switch only at roughly 360+ paying users</td></tr>
+  <tr><td>Many similar chat-with-PDF tools exist</td><td>Focus on proof (the highlighted source), Hindi and Hinglish, and privacy</td></tr>
+  <tr><td>Users do not trust you with documents</td><td>Clear consent, delete button, no training on data, privacy rules from day one</td></tr>
+  <tr><td>Depending on one AI provider</td><td>Keep the model behind one setting (already done) and test a fallback model</td></tr>
+  <tr><td>Little time (job + studies)</td><td>MVP first, 8-10 hours a week, and the gates above</td></tr>
+  <tr><td>Employment contract</td><td>Read the outside-work clause first. Build on your own time and your own tools.</td></tr>
+  <tr><td>Tax and legal mistakes</td><td>Ask a chartered accountant about GST and a lawyer about the policy before charging</td></tr>
+</table>
+
+<h3>Next steps</h3>
+<ul>
+  <li>Read your employment contract and confirm you may build and sell this</li>
+  <li>Ask 20 students: "Would you use a tool that answers from your PDFs and shows the page?"</li>
+  <li>Pick a hosted AI provider and run 20 real PDFs through it to measure cost per question</li>
+  <li>Deploy the current prototype to a VPS with HTTPS and invite the first 10 users</li>
+  <li>Create a Razorpay test account so payments are ready by day 60</li>
+  <li>Start the 30-day plan</li>
+</ul>
+
+</body>
+</html>

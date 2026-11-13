@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Library · Sidenote (design preview)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/design/design.css">
+  <script>try{var t=localStorage.getItem("sidenote_theme");if(t==="light")t="paper";if(t==="dark")t="night";if(/^(paper|night|sepia|forest|ocean|rose|contrast)$/.test(t))document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body class="dz">
+<p class="preview-bar">Design preview. This screen is not connected yet.</p>
+
+<div class="lib">
+  <aside class="rail" aria-label="Account">
+    <a class="brand" href="/"><svg class="logo" width="24" height="24" viewBox="0 0 22 22" aria-hidden="true"><rect class="l-bg" width="22" height="22" rx="5"/><rect class="l-line" x="5" y="6" width="12" height="2" rx="1"/><rect class="l-mark" x="5" y="12" width="12" height="4" rx="1"/></svg><span class="brand-name">Sidenote</span></a>
+    <nav class="rail-nav"><a aria-current="page" href="#">Library</a><a href="#">Saved chats</a><a href="#">Settings</a></nav>
+    <div class="rail-foot">
+      <div class="usage"><p class="left">212 of 300 questions left</p><div class="meter"><span style="width:29%"></span></div></div>
+      <p class="privacy">Plus plan · renews on 3 December</p>
+      <a class="btn ghost small" href="/design/pricing.html">Change plan</a>
+    </div>
+  </aside>
+  <main class="lib-main">
+    <header class="lib-head"><div><h1>Library</h1><p class="sub">4 of 20 files. Files are kept for 30 days after you add them.</p></div><button class="btn" type="button" disabled>Add files</button></header>
+    <ul class="doc-grid"><li class="doc-card"><span class="ext">PDF</span><div><h3>Biology notes, chapter 4</h3><p>12 pages · added today</p></div><a class="btn ghost small" href="/">Ask</a></li><li class="doc-card"><span class="ext">PDF</span><div><h3>Constitution of India, Part III</h3><p>46 pages · added 2 days ago</p></div><a class="btn ghost small" href="/">Ask</a></li><li class="doc-card"><span class="ext">TXT</span><div><h3>Lecture 7 transcript</h3><p>3 pages · added 4 days ago</p></div><a class="btn ghost small" href="/">Ask</a></li><li class="doc-card"><span class="ext">MD</span><div><h3>Project brief</h3><p>2 pages · added 6 days ago</p></div><a class="btn ghost small" href="/">Ask</a></li></ul>
+    <section class="empty" aria-label="Empty state example">
+      <h2>When the library is empty</h2>
+      <p>Add a PDF or your notes. They stay here so you can ask again later without uploading twice.</p>
+      <button class="btn" type="button" disabled>Add your first file</button>
+    </section>
+  </main>
+</div>
+<script src="/theme.js"></script>
+</body></html>
