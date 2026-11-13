@@ -45,3 +45,6 @@ The product name "Sidenote" appears only in `static/index.html`; replace it ther
   database, and Razorpay/Stripe.
 - Scanned PDFs (needs OCR), and better retrieval (multilingual embeddings).
 - A privacy policy and terms; users upload their own documents.
+=======
+"# sidenotes" 
+
